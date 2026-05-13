@@ -7,7 +7,7 @@ import Reveal from './Reveal'
 const testimonials = [
   {
     content:
-      "Masonic's attention to detail and commitment to quality is unmatched. They transformed our vision into reality while maintaining the highest standards of craftsmanship.",
+      "Artagan's attention to detail and commitment to quality is unmatched. They transformed our vision into reality while maintaining the highest standards of craftsmanship.",
     author: 'Sarah Johnson',
     role: 'Property Developer',
     company: 'Urban Living Spaces',
@@ -16,7 +16,7 @@ const testimonials = [
   },
   {
     content:
-      "The level of professionalism and technical expertise demonstrated by Masonic was exceptional. They delivered our project on time and within budget. I'd recommend them without hesitation.",
+      "The level of professionalism and technical expertise demonstrated by Artagan was exceptional. They delivered our project on time and within budget. I'd recommend them without hesitation.",
     author: 'David Martinez',
     role: 'Project Manager',
     company: 'Commercial Ventures Inc.',
@@ -25,7 +25,7 @@ const testimonials = [
   },
   {
     content:
-      "Working with Masonic was a seamless experience. Their team's expertise in historic restoration helped us preserve our building's character while modernizing its functionality.",
+      "Working with Artagan was a seamless experience. Their team's expertise in historic restoration helped us preserve our building's character while modernizing its functionality.",
     author: 'Michael Chen',
     role: 'Facilities Director',
     company: 'Heritage Foundation',
@@ -34,7 +34,7 @@ const testimonials = [
   },
   {
     content:
-      'From the initial consultation to the final walkthrough, Masonic exceeded every expectation. Our new headquarters is a masterpiece that reflects their dedication to excellence.',
+      'From the initial consultation to the final walkthrough, Artagan exceeded every expectation. Our new headquarters is a masterpiece that reflects their dedication to excellence.',
     author: 'Emily Rodriguez',
     role: 'CEO',
     company: 'NovaTech Solutions',
@@ -43,7 +43,7 @@ const testimonials = [
   },
   {
     content:
-      'We had a very tight timeline and a complex set of requirements. Masonic stepped up, delivered on schedule, and the quality was phenomenal.',
+      'We had a very tight timeline and a complex set of requirements. Artagan stepped up, delivered on schedule, and the quality was phenomenal.',
     author: 'James Thompson',
     role: 'Operations Director',
     company: 'Skyline Properties',

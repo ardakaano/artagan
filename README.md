@@ -1,7 +1,7 @@
-# Masonic — Modern Construction Company Website Template
+# Artagan — Modern Construction Company Website Template
 
 [![Deploy to Cloudflare Pages](https://img.shields.io/badge/Deploy%20to%20Cloudflare%20Pages-🟠F6821F?style=for-the-badge&logo=cloudflare&logoColor=white)](https://dash.cloudflare.com/?to=/:account/pages/new)
-[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://masonic-site.pages.dev/)
+[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://artagan-site.pages.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A bold, modern, responsive website template for construction and masonry companies — built with React, TypeScript, Tailwind CSS, and Framer Motion. Free & open source.
@@ -23,7 +23,7 @@ A bold, modern, responsive website template for construction and masonry compani
 
 ## 🚀 Live Demo
 
-**[View live demo →](https://masonic-site.pages.dev/)**
+**[View live demo →](https://artagan-site.pages.dev/)**
 
 ## 💻 Tech Stack
 
@@ -44,10 +44,10 @@ A bold, modern, responsive website template for construction and masonry compani
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/ardakaano/masonic.git
+git clone https://github.com/ardakaano/artagan.git
 
 # 2. Install dependencies
-cd masonic
+cd artagan
 npm install
 
 # 3. Start dev server
@@ -73,7 +73,7 @@ Your site will be live at `https://your-project.pages.dev`. You can also add a c
 ## 📁 Project Structure
 
 ```
-masonic/
+artagan/
 ├── src/
 │   ├── components/
 │   │   ├── Navbar.tsx           # Scroll-aware nav + mobile drawer
@@ -140,4 +140,4 @@ PRs welcome!
 - Twitter: [@ardakaanozcan_](https://twitter.com/ardakaanozcan_)
 - Email: [hey@ardakaanozcan.com](mailto:hey@ardakaanozcan.com)
 
-Project Link: [https://github.com/ardakaano/masonic](https://github.com/ardakaano/masonic)
+Project Link: [https://github.com/ardakaano/artagan](https://github.com/ardakaano/artagan)

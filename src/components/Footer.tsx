@@ -54,7 +54,7 @@ export default function Footer() {
               <span className="grid place-items-center w-9 h-9 rounded-lg bg-accent text-primary-900 font-bold text-sm">
                 M
               </span>
-              <span className="font-display text-xl font-bold tracking-tight">Masonic</span>
+              <span className="font-display text-xl font-bold tracking-tight">Artagan</span>
             </div>
             <p className="text-sm leading-relaxed text-white/60 max-w-sm">
               Building excellence through craftsmanship. We combine centuries of tradition with modern innovation
@@ -99,7 +99,7 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center gap-3 text-sm text-white/60">
                   <EnvelopeIcon className="w-4 h-4 text-white/40" />
-                  <a href="mailto:contact@masonic.com" className="hover:text-white transition-colors">contact@masonic.com</a>
+                  <a href="mailto:contact@artagan.com" className="hover:text-white transition-colors">contact@artagan.com</a>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-white/60">
                   <MapPinIcon className="w-4 h-4 text-white/40 flex-shrink-0 mt-0.5" />
@@ -139,7 +139,7 @@ export default function Footer() {
 
         <div className="mt-16 border-t border-white/10 pt-8 flex flex-col sm:flex-row gap-4 items-center justify-between">
           <p className="text-xs text-white/40">
-            &copy; {new Date().getFullYear()} Masonic Construction. All rights reserved.
+            &copy; {new Date().getFullYear()} Artagan Construction. All rights reserved.
           </p>
           <p className="text-xs text-white/30">
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent/60 mr-1.5" />

@@ -48,7 +48,7 @@ export default function About() {
               <p className="eyebrow">Who we are</p>
               <h2 className="section-title mt-4">Crafting structures that stand the test of time</h2>
               <p className="section-subtitle mt-6">
-                With over 25 years of combined experience, Masonic has evolved from a small family workshop into a
+                With over 25 years of combined experience, Artagan has evolved from a small family workshop into a
                 premier construction company known for meticulous attention to detail and unwavering commitment to
                 quality.
               </p>

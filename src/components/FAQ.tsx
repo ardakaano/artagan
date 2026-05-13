@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     q: 'Are you licensed and insured?',
-    a: 'Yes. Masonic is fully licensed in all 15 states we operate in and carries comprehensive general liability, workers compensation, and builder’s risk insurance. Documentation is provided during contract signing.',
+    a: 'Yes. Artagan is fully licensed in all 15 states we operate in and carries comprehensive general liability, workers compensation, and builder’s risk insurance. Documentation is provided during contract signing.',
   },
   {
     q: 'Do you handle permits and regulatory approvals?',

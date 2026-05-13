@@ -1,6 +1,6 @@
-# Contributing to Masonic
+# Contributing to Artagan
 
-First off, thank you for considering contributing to Masonic! It's people like you that make Masonic such a great tool.
+First off, thank you for considering contributing to Artagan! It's people like you that make Artagan such a great tool.
 
 ## Code of Conduct
 
@@ -65,7 +65,7 @@ If you have a suggestion for the project, we'd love to hear it! Enhancement sugg
 ## Setting Up Your Development Environment
 
 1. Fork the repository
-2. Clone your fork: `git clone https://github.com/your-username/masonic.git`
+2. Clone your fork: `git clone https://github.com/your-username/artagan.git`
 3. Install dependencies: `npm install`
 4. Create a branch for your changes: `git checkout -b feature/your-feature-name`
 5. Make your changes
@@ -75,7 +75,7 @@ If you have a suggestion for the project, we'd love to hear it! Enhancement sugg
 ## Project Structure
 
 ```
-masonic/
+artagan/
 ├── src/
 │   ├── components/    # React components
 │   ├── assets/       # Static assets

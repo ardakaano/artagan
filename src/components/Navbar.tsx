@@ -22,7 +22,7 @@ function Logo({ dark = false }: { dark?: boolean }) {
         </svg>
       </span>
       <span className={`font-display text-xl font-bold tracking-tight ${dark ? 'text-white' : 'text-primary-900'}`}>
-        Masonic
+        Artagan
       </span>
     </a>
   )

@@ -62,7 +62,7 @@ export default function Contact() {
               <dl className="mt-10 space-y-6">
                 {[
                   { icon: PhoneIcon, text: '+1 (555) 123-4567', href: 'tel:+15551234567' },
-                  { icon: EnvelopeIcon, text: 'contact@masonic.com', href: 'mailto:contact@masonic.com' },
+                  { icon: EnvelopeIcon, text: 'contact@artagan.com', href: 'mailto:contact@artagan.com' },
                   {
                     icon: MapPinIcon,
                     text: '123 Construction Ave, Suite 500\nSan Francisco, CA 94105',
