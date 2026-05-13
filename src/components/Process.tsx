@@ -1,36 +1,57 @@
 import { motion } from 'framer-motion'
-import { MagnifyingGlassIcon, PencilSquareIcon, WrenchIcon, SparklesIcon } from '@heroicons/react/24/outline'
 
 const steps = [
-  { step: '01', title: 'Discovery', body: 'We listen, survey, and plan.', icon: MagnifyingGlassIcon },
-  { step: '02', title: 'Design', body: 'Blueprints, permits, materials.', icon: PencilSquareIcon },
-  { step: '03', title: 'Build', body: 'On site, on time, on budget.', icon: WrenchIcon },
-  { step: '04', title: 'Deliver', body: 'Inspection, walkthrough, keys.', icon: SparklesIcon },
+  { n: '01', t: 'Discovery', d: 'We study your site, your vision, and your budget. Then we craft a roadmap.' },
+  { n: '02', t: 'Design', d: 'Architects and engineers translate your brief into detailed, buildable plans.' },
+  { n: '03', t: 'Build', d: 'Expert crews execute with precision. Daily reports keep you informed at every stage.' },
+  { n: '04', t: 'Deliver', d: 'Final inspection, walkthrough, keys in hand. We do not leave until it is perfect.' },
 ]
 
 export default function Process() {
   return (
-    <section id="process" className="py-32 bg-black">
+    <section id="process" className="py-32 bg-dark border-t border-white/[0.04] overflow-hidden">
       <div className="container">
-        <p className="text-sm font-medium text-orange-500 tracking-wide">Process</p>
-        <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-white tracking-tight">
-          How we work.
-        </h2>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-sm font-bold text-cyan tracking-[0.2em] uppercase"
+        >
+          Process
+        </motion.p>
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-4 text-section text-white max-w-2xl"
+        >
+          How we bring your project to life.
+        </motion.h2>
 
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06] rounded-2xl overflow-hidden">
+        {/* Desktop: horizontal numbered steps */}
+        <div className="mt-20 grid lg:grid-cols-4 gap-px bg-white/[0.04]">
           {steps.map((s, i) => (
             <motion.div
-              key={s.step}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              key={s.n}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-black p-8"
+              transition={{ delay: i * 0.12 }}
+              className="group bg-dark p-8 sm:p-10 relative overflow-hidden border-hover cursor-default"
             >
-              <span className="text-xs text-white/20 font-mono">{s.step}</span>
-              <s.icon className="w-6 h-6 text-white/30 mt-6" />
-              <p className="mt-4 text-lg font-semibold text-white">{s.title}</p>
-              <p className="mt-2 text-sm text-white/30 leading-relaxed">{s.body}</p>
+              {/* Big number background */}
+              <span className="absolute top-4 right-4 text-[6rem] font-black text-white/[0.02] leading-none select-none pointer-events-none" aria-hidden="true">
+                {s.n}
+              </span>
+
+              <div className="relative z-10">
+                <div className="flex items-center gap-3">
+                  <span className="text-xs font-mono text-cyan">{s.n}</span>
+                  <span className="w-8 h-px bg-cyan/30" aria-hidden="true" />
+                </div>
+                <p className="mt-8 text-xl font-bold text-white">{s.t}</p>
+                <p className="mt-3 text-sm text-white/30 leading-relaxed">{s.d}</p>
+              </div>
             </motion.div>
           ))}
         </div>

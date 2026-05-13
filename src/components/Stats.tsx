@@ -2,30 +2,35 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
 const stats = [
-  { end: 500, suffix: '+', label: 'Projects' },
-  { end: 25, suffix: '+', label: 'Years' },
-  { end: 150, suffix: '+', label: 'Engineers' },
+  { v: '500', s: '+', l: 'Projects' },
+  { v: '150', s: '+', l: 'Engineers' },
+  { v: '98', s: '%', l: 'Client retention' },
 ]
 
 export default function Stats() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 })
 
   return (
-    <section ref={ref} className="py-24 bg-black border-t border-b border-white/[0.06]">
-      <div className="container">
-        <div className="grid grid-cols-3 gap-8 max-w-2xl">
-          {stats.map((s) => (
+    <section ref={ref} className="relative py-24 bg-dark overflow-hidden border-t border-white/[0.04]">
+      {/* Decorative huge number */}
+      <p className="absolute -top-16 -right-8 big-number text-white/[0.015]" aria-hidden="true">
+        25
+      </p>
+
+      <div className="container relative">
+        <div className="grid grid-cols-3 gap-8 lg:gap-16">
+          {stats.map((s, i) => (
             <motion.div
-              key={s.label}
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.5 }}
+              key={s.l}
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <p className="text-5xl sm:text-6xl font-bold text-white tabular-nums">
-                {s.end.toLocaleString()}
-                {s.suffix}
-              </p>
-              <p className="mt-2 text-sm text-white/30">{s.label}</p>
+              <div className="flex items-baseline gap-1">
+                <span className="text-6xl lg:text-7xl font-black text-white tabular-nums">{s.v}</span>
+                <span className="text-3xl lg:text-4xl font-black text-accent">{s.s}</span>
+              </div>
+              <p className="mt-2 text-xs lg:text-sm text-white/30 uppercase tracking-[0.15em] font-semibold">{s.l}</p>
             </motion.div>
           ))}
         </div>

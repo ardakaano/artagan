@@ -1,90 +1,134 @@
 import { motion } from 'framer-motion'
-import { ArrowRightIcon } from '@heroicons/react/24/outline'
-
-const stats = [
-  { value: '500+', label: 'Projects' },
-  { value: '25y', label: 'Experience' },
-  { value: '15', label: 'States' },
-]
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center bg-black text-white overflow-hidden">
-      {/* Subtle grain overlay */}
-      <div className="absolute inset-0 bg-noise opacity-[0.03]" aria-hidden="true" />
+    <section className="relative min-h-screen bg-dark overflow-hidden flex items-center">
+      {/* Background pattern */}
+      <div className="absolute inset-0 bg-grid-dots bg-dots" aria-hidden="true" />
 
-      {/* Subtle radial glow */}
-      <div
+      {/* Big decorative "BUILD" text */}
+      <motion.p
+        initial={{ opacity: 0, x: -40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 0.2 }}
+        className="absolute top-8 -left-8 select-none pointer-events-none text-[clamp(8rem,20vw,16rem)] font-black leading-none text-white/[0.015] tracking-tighter whitespace-nowrap"
         aria-hidden="true"
-        className="absolute -top-40 right-0 w-[600px] h-[600px] rounded-full bg-orange-600/10 blur-[150px]"
+      >
+        BUILD
+      </motion.p>
+
+      {/* Diagonal accent bar */}
+      <motion.div
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="absolute top-0 right-0 w-[30vw] h-2 bg-accent origin-right -skew-x-20"
+        aria-hidden="true"
       />
 
-      <div className="container relative">
-        <div className="max-w-3xl">
+      {/* Bottom diagonal bar in cyan */}
+      <motion.div
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        className="absolute bottom-0 left-0 w-[40vw] h-2 bg-cyan origin-left -skew-x-20"
+        aria-hidden="true"
+      />
+
+      {/* Small squares decoration */}
+      <div className="absolute top-32 right-16 lg:right-32 flex gap-3" aria-hidden="true">
+        {['bg-accent', 'bg-cyan', 'bg-electric', 'bg-white/10'].map((c, i) => (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
+            key={c}
+            initial={{ opacity: 0, rotate: 45, scale: 0 }}
+            animate={{ opacity: 1, rotate: 45, scale: 1 }}
+            transition={{ duration: 0.4, delay: 0.6 + i * 0.1 }}
+            className={`w-5 h-5 ${c}`}
+          />
+        ))}
+      </div>
+
+      <div className="container relative z-10 pt-32 pb-20">
+        <div className="max-w-4xl">
+          {/* Tagline */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
           >
-            <p className="text-sm font-medium text-orange-500 mb-8 tracking-wide">
+            <p className="inline-flex items-center gap-3 text-sm font-semibold text-accent tracking-[0.2em] uppercase">
+              <span className="w-8 h-px bg-accent" />
               Construction & masonry
             </p>
           </motion.div>
 
+          {/* Main headline — Paula Scher energy */}
           <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-[clamp(2.5rem,7vw,6rem)] font-bold leading-[0.95] tracking-tight"
-          >
-            We build what<br />others can&rsquo;t.
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.25 }}
-            className="mt-8 max-w-xl text-lg text-white/40 leading-relaxed"
-          >
-            Commercial, residential, restoration. Craftsmanship backed by engineering.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-10 flex items-center gap-6"
+            className="mt-8 text-hero text-white"
+          >
+            We build<br />
+            <span className="relative">
+              <span className="relative z-10">what others</span>
+              <span className="absolute -inset-1 -bottom-1 bg-accent/30 -skew-x-2 -z-0" aria-hidden="true" />
+            </span>
+            {' '}<span className="text-accent">can&rsquo;t.</span>
+          </motion.h1>
+
+          {/* Sub */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.55 }}
+            className="mt-6 max-w-lg text-hero-sub text-white/40"
+          >
+            Commercial. Residential. Restoration. Since 2000.
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.7 }}
+            className="mt-10 flex flex-wrap gap-4"
           >
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black text-sm font-semibold hover:bg-orange-500 hover:text-white transition-colors duration-200"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-none bg-accent text-black font-bold text-sm hover:bg-accent-400 transition-colors"
             >
-              View work
-              <ArrowRightIcon className="w-4 h-4" />
+              View our work
+              <span className="text-lg">&nearr;</span>
             </a>
             <a
               href="#contact"
-              className="text-sm font-medium text-white/50 hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-none border border-white/20 text-white font-semibold text-sm hover:bg-white/5 hover:border-accent/50 transition-all"
             >
-              Get in touch &rarr;
+              Start a project
+              <span className="text-lg">&rarr;</span>
             </a>
           </motion.div>
-        </div>
 
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-32 flex gap-16"
-        >
-          {stats.map((s) => (
-            <div key={s.label}>
-              <p className="text-4xl font-bold text-white">{s.value}</p>
-              <p className="mt-1 text-sm text-white/30">{s.label}</p>
-            </div>
-          ))}
-        </motion.div>
+          {/* Big stats */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.85 }}
+            className="mt-24 flex flex-wrap gap-12 lg:gap-20"
+          >
+            {[
+              { v: '500+', l: 'Projects completed' },
+              { v: '25y', l: 'In business' },
+              { v: '15', l: 'States served' },
+            ].map((s) => (
+              <div key={s.l}>
+                <p className="text-4xl lg:text-5xl font-black text-white">{s.v}</p>
+                <p className="mt-1 text-xs text-white/30 uppercase tracking-wider">{s.l}</p>
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   )
