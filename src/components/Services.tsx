@@ -1,91 +1,46 @@
 import { motion } from 'framer-motion'
-import {
-  BuildingOffice2Icon,
-  WrenchScrewdriverIcon,
-  HomeModernIcon,
-  PresentationChartLineIcon,
-  CheckCircleIcon,
-} from '@heroicons/react/24/outline'
-import Reveal from './Reveal'
+import { BuildingOffice2Icon, WrenchScrewdriverIcon, HomeModernIcon, LightBulbIcon } from '@heroicons/react/24/outline'
 
 const services = [
-  {
-    name: 'Commercial Construction',
-    description:
-      'Expert construction services for commercial buildings, offices, and retail spaces with a focus on durability and functionality.',
-    icon: BuildingOffice2Icon,
-    features: ['Design-Build', 'Tenant improvements', 'Ground-up construction', 'Steel & concrete structures'],
-  },
-  {
-    name: 'Renovation & Restoration',
-    description:
-      'Specialized restoration services for historic buildings and modern renovation projects that preserve architectural integrity.',
-    icon: WrenchScrewdriverIcon,
-    features: ['Historic preservation', 'Seismic retrofitting', 'Facade restoration', 'Interior remodeling'],
-  },
-  {
-    name: 'Residential Projects',
-    description:
-      'Custom home construction and residential developments that combine traditional craftsmanship with modern living standards.',
-    icon: HomeModernIcon,
-    features: ['Custom homes', 'Multi-family units', 'Luxury residences', 'Smart home integration'],
-  },
-  {
-    name: 'Project Consultation',
-    description:
-      'Professional consultation services for construction projects, including planning, budgeting, and project management.',
-    icon: PresentationChartLineIcon,
-    features: ['Feasibility studies', 'Budget planning', 'Timeline management', 'Regulatory compliance'],
-  },
+  { name: 'Commercial', icon: BuildingOffice2Icon },
+  { name: 'Restoration', icon: WrenchScrewdriverIcon },
+  { name: 'Residential', icon: HomeModernIcon },
+  { name: 'Consulting', icon: LightBulbIcon },
 ]
 
 export default function Services() {
   return (
-    <section id="services" className="section bg-primary-50">
+    <section id="services" className="py-32 bg-black border-t border-white/[0.06]">
       <div className="container">
-        <Reveal className="text-center">
-          <p className="eyebrow mx-auto text-center">What we do</p>
-          <h2 className="section-title mt-4 mx-auto">Comprehensive construction services</h2>
-          <p className="section-subtitle mt-6 mx-auto">
-            From skyscrapers to historic restorations — we bring the right people, tools, and experience to every
-            project.
-          </p>
-        </Reveal>
+        <div className="flex items-end justify-between">
+          <div>
+            <p className="text-sm font-medium text-orange-500 tracking-wide">Services</p>
+            <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-white tracking-tight">
+              What we do.
+            </h2>
+          </div>
+          <a
+            href="#contact"
+            className="hidden sm:inline-block text-sm font-medium text-white/40 hover:text-white transition-colors"
+          >
+            Get a quote &rarr;
+          </a>
+        </div>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((service, idx) => (
+        <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06] rounded-2xl overflow-hidden">
+          {services.map((s, i) => (
             <motion.div
-              key={service.name}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              key={s.name}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              whileHover={{ y: -6 }}
-              className="card card-hover p-6 flex flex-col group"
+              transition={{ delay: i * 0.08 }}
+              className="group bg-black p-8 sm:p-10 hover:bg-white/[0.02] transition-colors duration-300"
             >
-              <div className="grid place-items-center w-12 h-12 rounded-xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-primary-900 transition-colors duration-300">
-                <service.icon className="h-6 w-6" aria-hidden="true" />
-              </div>
-              <p className="mt-5 text-lg font-semibold text-primary-900">{service.name}</p>
-              <p className="mt-2 text-sm leading-relaxed text-primary-600 flex-1">{service.description}</p>
-
-              {/* Features */}
-              <ul className="mt-4 space-y-2 border-t border-primary-100 pt-4">
-                {service.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2 text-sm text-primary-700">
-                    <CheckCircleIcon className="h-4 w-4 text-accent flex-shrink-0" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-
-              <p className="mt-5">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-accent-700 transition-colors"
-                >
-                  Learn more <span aria-hidden="true">→</span>
-                </a>
+              <s.icon className="w-7 h-7 text-white/30 group-hover:text-orange-500 transition-colors" />
+              <p className="mt-6 text-lg font-semibold text-white">{s.name}</p>
+              <p className="mt-2 text-sm text-white/30 group-hover:text-white/50 transition-colors">
+                Learn more &rarr;
               </p>
             </motion.div>
           ))}

@@ -6,8 +6,8 @@ import About from './components/About'
 import Services from './components/Services'
 import Process from './components/Process'
 import Projects from './components/Projects'
-import Testimonials from './components/Testimonials'
 import TrustedBy from './components/TrustedBy'
+import Testimonials from './components/Testimonials'
 import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -15,18 +15,16 @@ import BackToTop from './components/BackToTop'
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-black text-white">
       <Toaster
         position="bottom-right"
         toastOptions={{
           style: {
-            background: '#0F172A',
-            color: '#F8FAFC',
+            background: '#fff',
+            color: '#000',
             borderRadius: '12px',
-            fontSize: '14px',
-            fontWeight: 500,
+            fontSize: '13px',
           },
-          success: { iconTheme: { primary: '#F59E0B', secondary: '#0F172A' } },
         }}
       />
       <Navbar />
