@@ -1,59 +1,96 @@
-import { BuildingOffice2Icon, WrenchScrewdriverIcon, HomeModernIcon, PresentationChartLineIcon } from '@heroicons/react/24/outline'
+import { motion } from 'framer-motion'
+import {
+  BuildingOffice2Icon,
+  WrenchScrewdriverIcon,
+  HomeModernIcon,
+  PresentationChartLineIcon,
+  CheckCircleIcon,
+} from '@heroicons/react/24/outline'
+import Reveal from './Reveal'
 
 const services = [
   {
     name: 'Commercial Construction',
-    description: 'Expert construction services for commercial buildings, offices, and retail spaces with a focus on durability and functionality.',
+    description:
+      'Expert construction services for commercial buildings, offices, and retail spaces with a focus on durability and functionality.',
     icon: BuildingOffice2Icon,
+    features: ['Design-Build', 'Tenant improvements', 'Ground-up construction', 'Steel & concrete structures'],
   },
   {
     name: 'Renovation & Restoration',
-    description: 'Specialized restoration services for historic buildings and modern renovation projects that preserve architectural integrity.',
+    description:
+      'Specialized restoration services for historic buildings and modern renovation projects that preserve architectural integrity.',
     icon: WrenchScrewdriverIcon,
+    features: ['Historic preservation', 'Seismic retrofitting', 'Facade restoration', 'Interior remodeling'],
   },
   {
     name: 'Residential Projects',
-    description: 'Custom home construction and residential developments that combine traditional craftsmanship with modern living standards.',
+    description:
+      'Custom home construction and residential developments that combine traditional craftsmanship with modern living standards.',
     icon: HomeModernIcon,
+    features: ['Custom homes', 'Multi-family units', 'Luxury residences', 'Smart home integration'],
   },
   {
     name: 'Project Consultation',
-    description: 'Professional consultation services for construction projects, including planning, budgeting, and project management.',
+    description:
+      'Professional consultation services for construction projects, including planning, budgeting, and project management.',
     icon: PresentationChartLineIcon,
+    features: ['Feasibility studies', 'Budget planning', 'Timeline management', 'Regulatory compliance'],
   },
 ]
 
 export default function Services() {
   return (
-    <div id="services" className="py-24 sm:py-32">
+    <section id="services" className="section bg-primary-50">
       <div className="container">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Services</h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            We offer a comprehensive range of construction and masonry services, combining traditional craftsmanship with modern techniques.
+        <Reveal className="text-center">
+          <p className="eyebrow mx-auto text-center">What we do</p>
+          <h2 className="section-title mt-4 mx-auto">Comprehensive construction services</h2>
+          <p className="section-subtitle mt-6 mx-auto">
+            From skyscrapers to historic restorations — we bring the right people, tools, and experience to every
+            project.
           </p>
-        </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-4">
-            {services.map((service) => (
-              <div key={service.name} className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                  <service.icon className="h-5 w-5 flex-none text-primary" aria-hidden="true" />
-                  {service.name}
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">{service.description}</p>
-                  <p className="mt-6">
-                    <a href="#contact" className="text-sm font-semibold leading-6 text-primary">
-                      Learn more <span aria-hidden="true">→</span>
-                    </a>
-                  </p>
-                </dd>
+        </Reveal>
+
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {services.map((service, idx) => (
+            <motion.div
+              key={service.name}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              whileHover={{ y: -6 }}
+              className="card card-hover p-6 flex flex-col group"
+            >
+              <div className="grid place-items-center w-12 h-12 rounded-xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-primary-900 transition-colors duration-300">
+                <service.icon className="h-6 w-6" aria-hidden="true" />
               </div>
-            ))}
-          </dl>
+              <p className="mt-5 text-lg font-semibold text-primary-900">{service.name}</p>
+              <p className="mt-2 text-sm leading-relaxed text-primary-600 flex-1">{service.description}</p>
+
+              {/* Features */}
+              <ul className="mt-4 space-y-2 border-t border-primary-100 pt-4">
+                {service.features.map((f) => (
+                  <li key={f} className="flex items-center gap-2 text-sm text-primary-700">
+                    <CheckCircleIcon className="h-4 w-4 text-accent flex-shrink-0" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+
+              <p className="mt-5">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-accent-700 transition-colors"
+                >
+                  Learn more <span aria-hidden="true">→</span>
+                </a>
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   )
-} 
+}

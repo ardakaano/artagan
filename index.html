@@ -1,12 +1,58 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0F172A" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Primary meta -->
+    <title>Masonic — Building Excellence Through Craftsmanship</title>
+    <meta name="description" content="Masonic is a premier construction & masonry company. We blend centuries-old craftsmanship with cutting-edge engineering to build commercial, residential and restoration projects that endure." />
+    <meta name="keywords" content="construction, masonry, contractor, commercial construction, restoration, residential, builder" />
+    <meta name="author" content="Masonic Construction" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://masonic-site.vercel.app/" />
+    <meta property="og:title" content="Masonic — Building Excellence Through Craftsmanship" />
+    <meta property="og:description" content="Premier construction & masonry. Heritage craftsmanship meets modern engineering." />
+    <meta property="og:image" content="/preview.png" />
+    <meta property="og:site_name" content="Masonic" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Masonic — Building Excellence Through Craftsmanship" />
+    <meta name="twitter:description" content="Premier construction & masonry. Heritage craftsmanship meets modern engineering." />
+    <meta name="twitter:image" content="/preview.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- JSON-LD: LocalBusiness -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "GeneralContractor",
+        "name": "Masonic Construction",
+        "description": "Premier construction & masonry company.",
+        "url": "https://masonic-site.vercel.app/",
+        "telephone": "+1-555-123-4567",
+        "email": "contact@masonic.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Construction Ave, Suite 500",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "postalCode": "94105",
+          "addressCountry": "US"
+        }
+      }
+    </script>
   </head>
-  <body>
+  <body class="bg-primary-50 text-primary-900 antialiased">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
