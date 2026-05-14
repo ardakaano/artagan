@@ -16,7 +16,7 @@ export default function Testimonials() {
         <div className="mt-16 grid lg:grid-cols-3 gap-px bg-ink/5">
           {quotes.map((q, i) => (
             <motion.blockquote key={q.a} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-warm-50 p-10 hover:bg-white transition-colors">
-              <span className="block text-6xl font-black text-fire leading-none select-none" aria-hidden="true">&ldquo;</span>
+              <span className="block text-6xl font-black text-fire leading-none select-none" aria-hidden="true">“</span>
               <p className="mt-2 text-lg font-medium text-ink leading-relaxed">{q.t}</p>
               <footer className="mt-8 flex items-center gap-4 pt-6 border-t border-ink/5">
                 <div className="w-10 h-10 bg-ink grid place-items-center text-sm font-bold text-white">{q.a.charAt(0)}</div>

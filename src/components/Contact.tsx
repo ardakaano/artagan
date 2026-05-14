@@ -25,7 +25,7 @@ export default function Contact() {
       <div className="container max-w-2xl">
         <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="eyebrow">Contact</motion.p>
         <motion.h2 initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-6 text-section text-ink">
-          Let&rsquo;s build<br />
+          Let’s build<br />
           <span className="text-fire">something great.</span>
         </motion.h2>
         <motion.p initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="mt-6 text-lead text-ink-muted">Tell us about your project. We respond fast.</motion.p>
@@ -40,7 +40,7 @@ export default function Contact() {
             <textarea id="msg" rows={3} value={msg} onChange={(e) => setMsg(e.target.value)} placeholder="Tell us what you need..." className="w-full bg-transparent border-0 border-b-2 border-ink/10 pb-3 text-ink placeholder:text-ink/15 focus:outline-none focus:border-fire transition-colors resize-none" />
           </div>
           <button type="submit" disabled={loading} className="inline-flex items-center gap-2 px-8 py-4 bg-ink text-white font-bold text-sm hover:bg-fire transition-all disabled:opacity-40">
-            {loading ? 'Sending...' : <>Send message <span aria-hidden="true">&rarr;</span></>}
+            {loading ? 'Sending...' : <>Send message <span aria-hidden="true">→</span></>}
           </button>
         </motion.form>
 

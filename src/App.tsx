@@ -1,49 +1,38 @@
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Stats from './components/Stats'
-import TrustedBy from './components/TrustedBy'
-import About from './components/About'
-import Services from './components/Services'
-import Process from './components/Process'
-import Projects from './components/Projects'
-import Testimonials from './components/Testimonials'
-import FAQ from './components/FAQ'
-import Contact from './components/Contact'
+import Home from './pages/Home'
+import ProjectDetail from './pages/ProjectDetail'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
 
 function App() {
   return (
-    <div className="bg-white text-ink">
-      <Toaster
-        position="bottom-right"
-        toastOptions={{
-          style: {
-            background: '#171717',
-            color: '#fff',
-            borderRadius: 0,
-            fontSize: '13px',
-            fontWeight: 600,
-          },
-        }}
-      />
-      <Navbar />
-      <main>
-        <Hero />
-        <Stats />
-        <TrustedBy />
-        <About />
-        <Services />
-        <Process />
-        <Projects />
-        <Testimonials />
-        <FAQ />
-        <Contact />
-      </main>
-      <Footer />
-      <BackToTop />
-    </div>
+    <HashRouter>
+      <div className="bg-white text-ink">
+        <Toaster
+          position="bottom-right"
+          toastOptions={{
+            style: {
+              background: '#171717',
+              color: '#fff',
+              borderRadius: 0,
+              fontSize: '13px',
+              fontWeight: 600,
+            },
+          }}
+        />
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/project/:slug" element={<ProjectDetail />} />
+          </Routes>
+        </main>
+        <Footer />
+        <BackToTop />
+      </div>
+    </HashRouter>
   )
 }
 

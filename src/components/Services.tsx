@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { BuildingOffice2Icon, WrenchScrewdriverIcon, HomeModernIcon, LightBulbIcon } from '@heroicons/react/24/outline'
+import { scrollTo } from '../lib/scroll'
 
 const services = [
   { n: 'Commercial', i: BuildingOffice2Icon, bg: 'bg-fire-50 text-fire', d: 'Office towers, retail spaces, and industrial facilities. Built to scale.' },
@@ -17,7 +18,7 @@ export default function Services() {
             <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="eyebrow">Services</motion.p>
             <motion.h2 initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-6 text-section text-ink">What we do<br /><span className="text-ink/15">best.</span></motion.h2>
           </div>
-          <a href="#contact" className="text-sm font-bold text-ink-muted hover:text-fire transition-colors">Get a quote &rarr;</a>
+          <button onClick={() => scrollTo('contact')} className="text-sm font-bold text-ink-muted hover:text-fire transition-colors">Get a quote →</button>
         </div>
         <div className="mt-16 grid sm:grid-cols-2 gap-px bg-ink/5">
           {services.map((s, i) => (
@@ -28,7 +29,7 @@ export default function Services() {
               </div>
               <p className="mt-8 text-xl font-bold text-ink">{s.n}</p>
               <p className="mt-3 text-sm text-ink-muted leading-relaxed">{s.d}</p>
-              <p className="mt-5 text-xs font-bold text-ink/15 uppercase tracking-[0.15em] group-hover:text-fire transition-colors">Learn more &rarr;</p>
+              <p className="mt-5 text-xs font-bold text-ink/15 uppercase tracking-[0.15em] group-hover:text-fire transition-colors">Learn more →</p>
             </motion.div>
           ))}
         </div>
