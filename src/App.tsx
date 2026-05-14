@@ -15,19 +15,17 @@ import BackToTop from './components/BackToTop'
 
 function App() {
   return (
-    <div className="bg-dark text-white">
+    <div className="bg-white text-ink">
       <Toaster
         position="bottom-right"
         toastOptions={{
           style: {
-            background: '#18181b',
+            background: '#171717',
             color: '#fff',
-            borderRadius: '0',
+            borderRadius: 0,
             fontSize: '13px',
-            fontWeight: '600',
-            border: '1px solid rgba(255,255,255,0.06)',
+            fontWeight: 600,
           },
-          success: { iconTheme: { primary: '#06d6a0', secondary: '#18181b' } },
         }}
       />
       <Navbar />
