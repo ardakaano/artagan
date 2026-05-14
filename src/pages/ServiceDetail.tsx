@@ -2,8 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowLeftIcon } from '@heroicons/react/24/outline'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+
 
 const servicesData: Record<string, any> = {
   commercial: {
