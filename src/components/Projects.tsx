@@ -48,8 +48,8 @@ export default function Projects() {
           </AnimatePresence>
         </div>
 
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mt-14 text-center">
-          <Link to="/#contact" className="inline-flex items-center gap-2 px-8 py-4 border-2 border-ink text-ink font-bold text-sm hover:bg-ink hover:text-white transition-all">
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mt-14 sm:text-center flex flex-col sm:flex-row justify-center">
+          <Link to="/#contact" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 px-8 py-4 border-2 border-ink text-ink font-bold text-sm hover:bg-ink hover:text-white transition-all">
             Start your project <span aria-hidden="true">→</span>
           </Link>
         </motion.div>

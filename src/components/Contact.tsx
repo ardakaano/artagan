@@ -39,7 +39,7 @@ export default function Contact() {
             <label htmlFor="msg" className="block text-xs font-bold text-ink-faint uppercase tracking-[0.1em] mb-2">Project details</label>
             <textarea id="msg" rows={3} value={msg} onChange={(e) => setMsg(e.target.value)} placeholder="Tell us what you need..." className="w-full bg-transparent border-0 border-b-2 border-ink/10 pb-3 text-ink placeholder:text-ink/15 focus:outline-none focus:border-fire transition-colors resize-none" />
           </div>
-          <button type="submit" disabled={loading} className="inline-flex items-center gap-2 px-8 py-4 bg-ink text-white font-bold text-sm hover:bg-fire transition-all disabled:opacity-40">
+          <button type="submit" disabled={loading} className="w-full sm:w-auto inline-flex justify-center items-center gap-2 px-8 py-4 bg-ink text-white font-bold text-sm hover:bg-fire transition-all disabled:opacity-40">
             {loading ? 'Sending...' : <>Send message <span aria-hidden="true">→</span></>}
           </button>
         </motion.form>

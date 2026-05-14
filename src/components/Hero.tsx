@@ -24,18 +24,18 @@ export default function Hero() {
             Commercial towers, residential complexes, and historic restorations. Since 2000, we have delivered over 500 projects across 15 states.
           </motion.p>
 
-          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.6 }} className="mt-10 flex flex-wrap gap-4">
-            <button onClick={() => scrollTo('projects')} className="inline-flex items-center gap-2 px-8 py-4 bg-ink text-white font-bold text-sm hover:bg-fire transition-colors">
+          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.6 }} className="mt-10 flex flex-col sm:flex-row gap-4">
+            <button onClick={() => scrollTo('projects')} className="w-full sm:w-auto inline-flex justify-center items-center gap-2 px-8 py-4 bg-ink text-white font-bold text-sm hover:bg-fire transition-colors">
               View our work <span aria-hidden="true">↗</span>
             </button>
-            <button onClick={() => scrollTo('contact')} className="inline-flex items-center gap-2 px-8 py-4 border-2 border-ink text-ink font-bold text-sm hover:bg-ink hover:text-white transition-all">
+            <button onClick={() => scrollTo('contact')} className="w-full sm:w-auto inline-flex justify-center items-center gap-2 px-8 py-4 border-2 border-ink text-ink font-bold text-sm hover:bg-ink hover:text-white transition-all">
               Start a project <span aria-hidden="true">→</span>
             </button>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.75 }} className="mt-24 flex flex-wrap gap-x-16 gap-y-6">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.75 }} className="mt-16 sm:mt-24 grid grid-cols-2 sm:flex sm:flex-wrap gap-x-8 sm:gap-x-16 gap-y-8">
             {[{ v: '500+', l: 'Projects delivered' }, { v: '25y', l: 'In business' }, { v: '98%', l: 'Client retention' }].map((s) => (
-              <div key={s.l}><p className="text-4xl font-black text-ink">{s.v}</p><p className="mt-1 text-xs font-semibold text-ink-faint uppercase tracking-wider">{s.l}</p></div>
+              <div key={s.l}><p className="text-3xl sm:text-4xl font-black text-ink">{s.v}</p><p className="mt-1 text-[10px] sm:text-xs font-semibold text-ink-faint uppercase tracking-wider">{s.l}</p></div>
             ))}
           </motion.div>
         </div>
