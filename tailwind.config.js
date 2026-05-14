@@ -10,7 +10,7 @@ export default {
         electric: { DEFAULT: '#facc15' },
         ocean: { DEFAULT: '#0d9488', 600: '#0f766e' },
       },
-      fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+      fontFamily: { sans: ['"IBM Plex Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
       fontSize: {
         hero: ['clamp(3rem,7vw,5.5rem)', { lineHeight: '0.95', letterSpacing: '-0.04em', fontWeight: '800' }],
         'hero-sub': ['clamp(1rem,1.5vw,1.2rem)', { lineHeight: '1.6', letterSpacing: '-0.01em' }],

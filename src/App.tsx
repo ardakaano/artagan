@@ -3,6 +3,7 @@ import { Toaster } from 'react-hot-toast'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import ProjectDetail from './pages/ProjectDetail'
+import ServiceDetail from './pages/ServiceDetail'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
 
@@ -27,6 +28,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/project/:slug" element={<ProjectDetail />} />
+            <Route path="/service/:slug" element={<ServiceDetail />} />
           </Routes>
         </main>
         <Footer />

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { BuildingOffice2Icon, WrenchScrewdriverIcon, HomeModernIcon, LightBulbIcon } from '@heroicons/react/24/outline'
 import { scrollTo } from '../lib/scroll'
+import { Link } from 'react-router-dom'
 
 const services = [
   { n: 'Commercial', i: BuildingOffice2Icon, bg: 'bg-fire-50 text-fire', d: 'Office towers, retail spaces, and industrial facilities. Built to scale.' },
@@ -22,14 +23,15 @@ export default function Services() {
         </div>
         <div className="mt-16 grid sm:grid-cols-2 gap-px bg-ink/5">
           {services.map((s, i) => (
-            <motion.div key={s.n} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group bg-white p-8 sm:p-10 hover:bg-warm-50 transition-colors cursor-default">
-              <div className="flex items-start justify-between">
+            <motion.div key={s.n} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group bg-white p-8 sm:p-10 hover:bg-warm-50 transition-colors cursor-pointer relative">
+              <Link to={`/service/${s.n.toLowerCase()}`} className="absolute inset-0 z-10"><span className="sr-only">View {s.n}</span></Link>
+              <div className="flex items-start justify-between relative z-0">
                 <div className={`grid place-items-center w-12 h-12 ${s.bg}`}><s.i className="w-6 h-6" /></div>
                 <span className="text-[10px] font-mono text-ink/10">0{i + 1}</span>
               </div>
-              <p className="mt-8 text-xl font-bold text-ink">{s.n}</p>
-              <p className="mt-3 text-sm text-ink-muted leading-relaxed">{s.d}</p>
-              <p className="mt-5 text-xs font-bold text-ink/15 uppercase tracking-[0.15em] group-hover:text-fire transition-colors">Learn more →</p>
+              <p className="mt-8 text-xl font-bold text-ink relative z-0">{s.n}</p>
+              <p className="mt-3 text-sm text-ink-muted leading-relaxed relative z-0">{s.d}</p>
+              <p className="mt-5 text-xs font-bold text-ink/15 uppercase tracking-[0.15em] group-hover:text-fire transition-colors relative z-0">Learn more →</p>
             </motion.div>
           ))}
         </div>
